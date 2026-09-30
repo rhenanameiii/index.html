@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 10% 20%, #f3c6d8 0 90px, transparent 91px),
+        radial-gradient(circle at 90% 80%, #d8c5ed 0 120px, transparent 121px),
+        linear-gradient(135deg, #fff1f5, #eee5f7, #fff8e8);
+}
+
+/* Floating decorations */
+.shape {
+    position: fixed;
+    color: rgba(176, 138, 101, 0.35);
+    font-size: 45px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.one {
+    top: 8%;
+    left: 10%;
+}
+
+.two {
+    bottom: 10%;
+    right: 10%;
+    font-size: 65px;
+}
+
+.three {
+    top: 15%;
+    right: 12%;
+}
+
+.four {
+    bottom: 15%;
+    left: 12%;
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-18px) rotate(10deg);
+    }
+}
+
+/* Opening */
+.opening {
+    text-align: center;
+    padding: 50px;
+    transition: .8s;
+}
+
+.opening.hide {
+    opacity: 0;
+    transform: scale(.5) rotate(-8deg);
+    pointer-events: none;
+}
+
+.small {
+    color: #806b65;
+    font-style: italic;
+}
+
+.opening h1 {
+    margin-top: 15px;
+    font-size: 55px;
+    font-style: italic;
+    color: #b08a65;
+}
+
+.opening h2 {
+    font-size: 60px;
+    color: #293b5f;
+}
+
+.flower {
+    font-size: 45px;
+    color: #c59b6d;
+    margin: 20px;
+}
+
+button {
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background: #293b5f;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    background: #b08a65;
+}
+
+/* Card */
+.card {
+    position: absolute;
+    width: 90%;
+    max-width: 650px;
+    padding: 50px;
+    text-align: center;
+
+    background: rgba(255,255,255,.93);
+    border: 2px solid #d8b4a0;
+    border-radius: 40px 12px 40px 12px;
+
+    box-shadow: 0 20px 45px rgba(80,60,70,.2);
+
+    opacity: 0;
+    transform: scale(.5) rotate(8deg);
+    pointer-events: none;
+    transition: .8s;
+}
+
+.card.show {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+    pointer-events: auto;
+}
+
+/* Letter animation */
+.animated-text {
+    animation: letterBounce 1.5s ease-in-out infinite alternate;
+}
+
+.card h1 {
+    font-size: 42px;
+    font-style: italic;
+    color: #b08a65;
+}
+
+.card h2 {
+    font-size: 48px;
+    color: #293b5f;
+}
+
+@keyframes letterBounce {
+    from {
+        letter-spacing: 0;
+        transform: translateY(0);
+    }
+
+    to {
+        letter-spacing: 5px;
+        transform: translateY(-5px);
+    }
+}
+
+.top-flower {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #c59b6d;
+    font-size: 35px;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.small-title {
+    color: #777;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.line {
+    margin: 15px;
+    color: #c59b6d;
+    letter-spacing: 10px;
+}
+
+.message {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.thanks {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+    color: #806b65;
+    font-style: italic;
+}
+
+.teacher {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 30px;
+    background: #f1d9df;
+    color: #59455b;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.footer {
+    margin: 15px 0 20px;
+    color: #999;
+}
+
+.music-btn {
+    background: #b08a65;
+    padding: 9px 20px;
+    font-size: 12px;
+}
+
+.back {
+    padding: 9px 20px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+    .opening h1 {
+        font-size: 42px;
+    }
+
+    .opening h2 {
+        font-size: 45px;
+    }
+
+    .card {
+        padding: 40px 25px;
+    }
+
+    .card h1 {
+        font-size: 34px;
+    }
+
+    .card h2 {
+        font-size: 38px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+}
